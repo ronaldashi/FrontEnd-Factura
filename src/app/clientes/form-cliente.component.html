@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="card-body">
+        <h5 class="card-title">{{titulo}}</h5>
+        <form>
+            <br>
+            <div class="form-group row">
+                <label for="id_cliente" class="col-form-label col-sm-2">Id</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" name="id_cliente" [(ngModel)]="clientes.id_cliente"
+                        placeholder="Ingresa el id del cliente" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="nombres" class="col-form-label col-sm-2">Nombres</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="nombres" [(ngModel)]="clientes.nombre"
+                        placeholder="Ingresa el nombre del cliente" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="apellidos" class="col-form-label col-sm-2">Apellidos</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="apellidos" [(ngModel)]="clientes.apellidos"
+                        placeholder="Ingresa el apellido del cliente" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="telefono" class="col-form-label col-sm-2">Telefono</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" name="telefono" [(ngModel)]="clientes.telefono"
+                        placeholder="Ingresa el telefono del cliente" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="fecha_nacimiento" class="col-form-label col-sm-2">Fecha de Nacimiento</label>
+                <div class="col-sm-6">
+                    <input type="date" placeholder="dd-MM-yyyy" class="form-control" name="fecha_nacimiento"
+                        [(ngModel)]="clientes.fecha_nacimiento " placeholder="Ingresa la fecha de nacimiento" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="email" class="col-form-label col-sm-2">Email</label>
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" name="email" [(ngModel)]="clientes.email"
+                        placeholder="Ingresa el correo del cliente" required>
+                </div>
+            </div>
+            <br>
+            <button class="btn btn-success" role="button" (click)='create()'> REGISTRAR CLIENTE</button>
+            <br><br>
+
+            <button class="btn btn-info" role="button" (click)='update()'> MODIFICAR CLIENTE</button>
+
+
+        </form>
+    </div>
+
+</div>

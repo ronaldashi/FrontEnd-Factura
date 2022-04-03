@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="card-body">
+        <h5 class="card-title">{{titulo}}</h5>
+        <form>
+            <br>
+            <div class="form-group row">
+                <label for="num_factura" class="col-form-label col-sm-2">Num Factura</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" name="num_factura" [(ngModel)]="facturas.num_factura"
+                        placeholder="Ingresa el numero de la factura" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="id_cliente" class="col-form-label col-sm-2">Id Cliente</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="id_cliente" [(ngModel)]="facturas.id_cliente"
+                        placeholder="Ingresa el id del cliente" required>
+
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="fecha" class="col-form-label col-sm-2">Fecha</label>
+                <div class="col-sm-6">
+                    <input type="date" class="form-control" placeholder="dd-MM-yyyy" name="fecha"
+                        [(ngModel)]="facturas.fecha" placeholder="Ingresa la fecha de la factura" required>
+                </div>
+            </div>
+            <br>
+
+            <button class="btn btn-success" role="button" (click)='create()'> REGISTRAR FACTURA</button>
+
+
+            <button class="btn btn-info" role="button" (click)='update()'> MODIFICAR FACTURA</button>
+
+
+        </form>
+    </div>
+
+</div>

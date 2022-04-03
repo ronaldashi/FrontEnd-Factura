@@ -1,0 +1,58 @@
+<div class="container">
+  <br>
+
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32">
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+      <span class="fs-4">Prueba Desarrollo</span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="/clientes" class="nav-link active" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="/factura" class="nav-link">Facturas</a></li>
+      <li class="nav-item"><a href="/detalle" class="nav-link">Detalle</a></li>
+      <li class="nav-item"><a href="/producto" class="nav-link">Productos</a></li>
+      <li class="nav-item"><a href="/clientes" class="nav-link">Clientes</a></li>
+    </ul>
+  </header>
+  <style>
+  </style>
+
+  <p></p>
+  <br>
+  <div class="container-fluid">
+    <button class="btn btn-info" type="button" [routerLink]="['/factura/form']"> Nueva Factura</button>
+  </div>
+  <p></p>
+
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Num Factura</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">id Cliente</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let factura of facturas">
+        <th>{{factura.num_factura}}</th>
+        <td>{{factura.fecha | date:'yyyy-MM-dd'}}</td>
+        <td>
+          <ul>
+            <li *ngFor="let item of clientes">
+              {{item.id_cliente}}
+            </li>
+          </ul>
+        </td>
+        <td><button type="button" name="button" class="btn btn-primary"
+            [routerLink]="['/factura/form/',factura.num_factura]">EDITAR</button></td>
+        <td><button class="btn btn-danger" (click)="delete(factura)">ELIMINAR</button></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
